@@ -1,6 +1,6 @@
 # Router
 
-A lightweight and flexible router component for React applications.
+A lightweight and flexible router.
 
 ## Features
 
