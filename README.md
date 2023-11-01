@@ -25,7 +25,6 @@ Define your route components and custom 404 component.
 import Home from './components/Home'
 import About from './components/About'
 import Contact from './components/Contact'
-import NotFound from './components/NotFound'
 
 const routes = [
   { path: '/', component: Home },
