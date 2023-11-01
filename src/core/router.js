@@ -26,38 +26,6 @@ export default function Router() {
   const [route, setRoute] = useState(window.location.pathname || '/')
   const [context, dispatch] = useContext(Context)
   
-  
-  // consider moving non router logic out of router and to an Init component...
-  const getSession = async () => {
-    try {
-      const response = await getRequest(api.user.session)
-      dispatch({ type: 'session', payload: true })
-      dispatch({ type: 'user', payload: { 
-        username: 'Sinophile', 
-        avatar: '' 
-      } })
-      if (response.data.email_verified) {
-        dispatch({ type: 'email_verified', payload: response.data.email_verified })
-      }
-    } catch (error) {
-      dispatch({ type: 'session', payload: false })
-      dispatch({ type: 'email_verified', payload: false })
-      
-      //remove this:
-      dispatch({ type: 'user', payload: { 
-        username: 'Sinophile', 
-        avatar: '' 
-      } })
-    }
-  }
-  
-  const consoleWarning = () => {
-    console.log("%cWarning!", 'color: red; font-size: 22px;')
-    console.log('Using this console may allow attackers to impersonate you and steal your information using an attack called Self-XSS.')
-    console.log('Do not enter or paste code that you do not understand.')
-  }
-///  
-
 
   const matchRoute = path => {
     if (RouteCache.has(path)) {
@@ -99,11 +67,6 @@ export default function Router() {
     }
   }, [context.router])
   
-  useEffect(() => {
-    getSession()
-    consoleWarning()
-  }, [])
-
   return (
     <Suspense fallback={<div className="center"><Loader /></div>}>
       {renderComponent()}
