@@ -18,9 +18,7 @@
     "build": "webpack --mode production"
   },
   "devDependencies": {
-    "webpack": "^5.89.0"
-  },
-  "devDependencies": {
+    "webpack": "^5.89.0",
     "@babel/core": "^7.23.2",
     "@babel/preset-env": "^7.23.2",
     "@babel/preset-react": "^7.22.15",
