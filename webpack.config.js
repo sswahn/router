@@ -4,7 +4,7 @@ export default {
   entry: './src/index.js', // Adjust the entry point to your project's main file
   output: {
     filename: 'bundle.js', // Output file name
-    path: path.resolve(new URL(import.meta.url).pathname, 'dist'), // Output directory
+    path: path.resolve(__dirname, 'dist'), // Output directory
   },
   module: {
     rules: [
