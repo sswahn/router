@@ -5,7 +5,7 @@
   "description": "A lightweight and flexible router.",
   "type": "module",
   "main": "src/index.js",
-  "module": "dist/bundle.js"
+  "module": "dist/bundle.js",
   "keywords": [
     "router",
     "navigation"
