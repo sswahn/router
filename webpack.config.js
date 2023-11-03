@@ -1,10 +1,10 @@
-const path = require('path')
+import path from 'path' // Import path module
 
-module.exports = {
+export default {
   entry: './src/index.js', // Adjust the entry point to your project's main file
   output: {
     filename: 'bundle.js', // Output file name
-    path: path.resolve(__dirname, 'dist'), // Output directory
+    path: path.resolve(new URL(import.meta.url).pathname, 'dist'), // Output directory
   },
   module: {
     rules: [
