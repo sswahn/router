@@ -13,6 +13,10 @@
     "type": "git",
     "url": "https://github.com/sswahn/router"
   },
+  "scripts": {
+    "start": "webpack --mode development",
+    "build": "webpack --mode production"
+  },
   "devDependencies": {
     "webpack": "^5.89.0"
   },
