@@ -63,4 +63,4 @@ const afterRouteChange = path => {
 ```
 
 ## License
-Server is [MIT Licensed](https://github.com/sswahn/router/blob/main/LICENSE)
+Router is [MIT Licensed](https://github.com/sswahn/router/blob/main/LICENSE)
