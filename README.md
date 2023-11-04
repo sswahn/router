@@ -66,9 +66,12 @@ To lazy load a component provide a `lazyFallback` component.
 
 Navigate to a route's path with `useNavigation` hook.  
 ```javascript
-import { useNavigation } from '@sswahn/router'
+import { useContext } from 'react'
+import { RouterContext } from '@sswahn/router'
 
-const navigateTo = useNavigation()
+...
+
+const navigateTo = useContext(RouterContext)
 
 const handleOnClick = event => {
   navigateTo('/about')
