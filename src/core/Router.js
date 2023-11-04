@@ -1,4 +1,3 @@
-let route = window.location.pathname || '/'
 
 const Router = ({ routes, notFound, beforeRouteChange, afterRouteChange }) => {
   const matchRoute = path => {
@@ -15,7 +14,7 @@ const Router = ({ routes, notFound, beforeRouteChange, afterRouteChange }) => {
     return matchedRoute || null
   }
 
-  const renderComponent = () => {
+  const renderComponent = route => {
     const MatchedRoute = matchRoute(route)
     if (MatchedRoute) {
       if (beforeRouteChange) {
@@ -30,16 +29,24 @@ const Router = ({ routes, notFound, beforeRouteChange, afterRouteChange }) => {
     }
   }
 
-  const handleRouteChange = () => {
+  const handleRouteChange = event => {
+    const path = event.state 
+      ? event.state.path 
+      : window.location.pathname
+    renderComponent(path)
     if (afterRouteChange) {
-      afterRouteChange(window.location.pathname)
+      afterRouteChange(path)
     }
-    route = window.location.pathname
   }
 
+  //window.addEventListener('popstate', handleRouteChange)
+    // Listen for popstate events when the user navigates using the browser's back/forward buttons
   window.addEventListener('popstate', handleRouteChange)
 
-  return renderComponent()
+  // Listen for pushstate events when you use history.pushState
+  window.addEventListener('pushstate', handleRouteChange)
+
+  return renderComponent(window.location.pathname || '/')
 }
 
 export default Router
