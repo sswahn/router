@@ -2,23 +2,18 @@ import { useState, useContext, useEffect, Suspense } from 'react'
 import { RouterContext } from './Provider.js'
 const RouteCache = new Map()
 
-export default function Handler({ routes, notFound, lazyFallback }) {
+export default function Handler({ notFound, lazyFallback, children }) {
   const [route, setRoute] = useState(window.location.pathname || '/')
   const {context, dispatch} = useContext(RouterContext)
-
+  
   const matchRoute = path => {
     if (RouteCache.has(path)) {
       return RouteCache.get(path)
     }
-    const matchedRoute = routes.find(({ path: routePath }) => {
-      const pathSegments = path.split('/').filter(Boolean)
-      const routeSegments = routePath.split('/').filter(Boolean)
-      return (
-        pathSegments.length === routeSegments.length &&
-        routeSegments.every((segment, index) => segment.startsWith(':') || segment === pathSegments[index])
-      )
+    const matchedRoute = children.find((child) => {
+      return child.props.path && child.props.path === path
     })
-    const component = matchedRoute ? matchedRoute.component : null
+    const component = matchedRoute ? matchedRoute.props.component : null
     RouteCache.set(path, component)
     return component
   }
