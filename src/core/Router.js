@@ -38,13 +38,9 @@ const Router = ({ routes, notFound, beforeRouteChange, afterRouteChange }) => {
       afterRouteChange(path)
     }
   }
-
-  //window.addEventListener('popstate', handleRouteChange)
-    // Listen for popstate events when the user navigates using the browser's back/forward buttons
-  window.addEventListener('popstate', handleRouteChange)
-
-  // Listen for pushstate events when you use history.pushState
-  window.addEventListener('pushstate', handleRouteChange)
+    
+  window.addEventListener('popstate', handleRouteChange) // Listen for popstate events when the user navigates using the browser's back/forward buttons
+  window.addEventListener('pushstate', handleRouteChange) // Listen for pushstate events when you use history.pushState
 
   return renderComponent(window.location.pathname || '/')
 }
