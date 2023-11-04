@@ -57,7 +57,17 @@ const navigateTo = useNavigation()
 const handleOnClick = event => {
   navigateTo('/about')
 }
+```
+
+To lazy load a component provide a `lazyFallback` component.  
+```javascript
+<Router
+  routes={routes}
+  notFound={CustomNotFound}
+  lazyFallback={CustomFallbackComponent}
+/>
 ```  
+
 <!--
 ## Route Guards
 You can define route guards to run code before and after route changes.  
