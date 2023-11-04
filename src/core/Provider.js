@@ -16,7 +16,7 @@ export default function Provider({ children }) {
   }
   const [context, dispatch] = useReducer(reducer, data)
   
-  const navigateTo = (path) => {
+  const navigateTo = path => {
     history.pushState(null, '', path)
     dispatch({ type: 'router', payload: path })
   }
