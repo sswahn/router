@@ -1,10 +1,10 @@
 import { useState, useContext, useEffect, Suspense } from 'react'
-import { Context } from './Provider.js'
+import { RouterContext } from './Provider.js'
 const RouteCache = new Map()
 
 export default function Handler({ routes, notFound, lazyFallback }) {
   const [route, setRoute] = useState(window.location.pathname || '/')
-  const [context, dispatch] = useContext(Context)
+  const [context, dispatch] = useContext(RouterContext)
 
   const matchRoute = path => {
     if (RouteCache.has(path)) {
