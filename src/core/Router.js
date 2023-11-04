@@ -1,6 +1,6 @@
 let route = window.location.pathname || '/'
 
-const Router = ({ routes, notFoundComponent, beforeRouteChange, afterRouteChange }) => {
+const Router = ({ routes, notFound, beforeRouteChange, afterRouteChange }) => {
   const matchRoute = path => {
     const matchedRoute = routes.find(({ path: routePath }) => {
       const pathSegments = path.split('/').filter(Boolean)
@@ -23,8 +23,8 @@ const Router = ({ routes, notFoundComponent, beforeRouteChange, afterRouteChange
       }
       return MatchedRoute.component()
     }
-    if (notFoundComponent) {
-      return notFoundComponent()
+    if (notFound) {
+      return notFound()
     } else {
       throw new Error('Route not found.')
     }
