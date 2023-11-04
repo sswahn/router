@@ -37,7 +37,9 @@ const routes = [
 
 Create the `Router` component using your routes array.  
 ```javascript
-<Router routes={routes} />
+<Router routes={routes}>
+  <App />
+</Router>
 ```
 
 Define a custom 404 component.  
@@ -47,7 +49,9 @@ const CustomNotFound = () => <div>Custom 404 - Not Found</div>
 
 Add your custom 404 component the `Router`.  
 ```javascript
-<Router routes={routes} notFound={CustomNotFound} />
+<Router routes={routes} notFound={CustomNotFound}>
+  <App />
+</Router>
 ```  
 
 To lazy load a component provide a `lazyFallback` component.  
@@ -55,8 +59,9 @@ To lazy load a component provide a `lazyFallback` component.
 <Router
   routes={routes}
   notFound={CustomNotFound}
-  lazyFallback={CustomFallbackComponent}
-/>
+  lazyFallback={CustomFallbackComponent}>
+  <App />
+</Router>
 ```  
 
 Navigate to a route's path with `useNavigation` hook.  
@@ -86,9 +91,11 @@ const afterRouteChange = path => {
 <Router
   routes={routes}
   notFound={CustomNotFound}
+  lazyFallback={CustomFallbackComponent}
   beforeRouteChange={beforeRouteChange}
-  afterRouteChange={afterRouteChange}
-/>
+  afterRouteChange={afterRouteChange}>
+  <App />
+</Router>
 ```
 -->
 ## License
