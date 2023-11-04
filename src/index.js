@@ -1,7 +1,7 @@
 import Router from './core/Router.js'
-import { useNavigation } from './core/useNavigation.js'
+import { RouterContext } from './core/Provider.js'
 
 export {
   Router,
-  useNavigation
+  RouterContext
 }
