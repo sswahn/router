@@ -15,8 +15,14 @@ export default function Provider({ children }) {
     }
   }
   const [state, dispatch] = useReducer(reducer, data)
+  
+  const navigateTo = (path) => {
+    history.pushState(null, '', path)
+    dispatch({ type: 'router', payload: path })
+  }
+  
   return (
-    <Context.Provider value={[state, dispatch]}>
+    <Context.Provider value={{state, dispatch, navigateTo}}>
       {children}
     </Context.Provider>
   )
