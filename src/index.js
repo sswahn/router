@@ -1,5 +1,5 @@
-import Router from './core/Router.js'
-import { useNavigation } from './core/useNavigation.js'
+import Router from './core/Router'
+import { useNavigation } from './core/useNavigation'
 
 export {
   Router,
