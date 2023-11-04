@@ -6,7 +6,8 @@ A lightweight and flexible router.
 
 - Custom route configuration
 - Custom 404 (Not Found) component
-- Optional route guards (before and after route change)
+- Route caching
+<!-- - Optional route guards (before and after route change) -->
 - No external dependencies
 
 ## Installation  
