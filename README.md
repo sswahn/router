@@ -48,15 +48,17 @@ Add your custom 404 component the `Router`.
 <Router routes={routes} notFound={CustomNotFound} />
 ```
 
-Navigate to a route's path.  
+Navigate to a route's path with `useNavigation` hook.  
 ```javascript
-import { navigateTo } from '@sswahn/router'
+import { useNavigation } from '@sswahn/router'
+
+const navigateTo = useNavigation()
 
 const handleOnClick = event => {
   navigateTo('/about')
 }
 ```  
-
+<--
 ## Route Guards
 You can define route guards to run code before and after route changes.  
 ```javascript
@@ -75,6 +77,6 @@ const afterRouteChange = path => {
   afterRouteChange={afterRouteChange}
 />
 ```
-
+-->
 ## License
 Router is [MIT Licensed](https://github.com/sswahn/router/blob/main/LICENSE)
