@@ -6,9 +6,9 @@ A lightweight and flexible router.
 
 - Custom route configuration
 - Custom 404 (Not Found) component
+- Lazy loading components
 - Route caching
-<!-- - Optional route guards (before and after route change) -->
-- No external dependencies
+<!-- - Route guards (before and after route change) -->
 
 ## Installation  
 ```bash
