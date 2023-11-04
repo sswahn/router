@@ -8,6 +8,7 @@ A lightweight and flexible router.
 - Custom 404 (Not Found) component
 - Lazy loading components
 - Route caching
+- Programmatic navigation hook
 <!-- - Route guards (before and after route change) -->
 
 ## Installation  
