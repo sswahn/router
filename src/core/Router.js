@@ -21,9 +21,9 @@ const Router = ({ routes, notFoundComponent, beforeRouteChange, afterRouteChange
       if (beforeRouteChange) {
         beforeRouteChange(route)
       }
-      return <MatchedRoute.component />
+      return MatchedRoute.component()
     }
-    return notFoundComponent ? <notFoundComponent /> : <NotFoundComponent />
+    return notFoundComponent ? notFoundComponent() : NotFoundComponent()
   }
 
   const handleRouteChange = () => {
