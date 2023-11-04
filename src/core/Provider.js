@@ -1,6 +1,6 @@
 import { createContext, useReducer } from 'react'
 
-export const Context = createContext([])
+export const RouterContext = createContext([])
 
 export default function Provider({ children }) {
   const data = {
