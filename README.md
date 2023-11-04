@@ -58,7 +58,7 @@ const handleOnClick = event => {
   navigateTo('/about')
 }
 ```  
-<--
+<!--
 ## Route Guards
 You can define route guards to run code before and after route changes.  
 ```javascript
