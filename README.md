@@ -47,7 +47,16 @@ const CustomNotFound = () => <div>Custom 404 - Not Found</div>
 Add your custom 404 component the `Router`.  
 ```javascript
 <Router routes={routes} notFound={CustomNotFound} />
-```
+```  
+
+To lazy load a component provide a `lazyFallback` component.  
+```javascript
+<Router
+  routes={routes}
+  notFound={CustomNotFound}
+  lazyFallback={CustomFallbackComponent}
+/>
+```  
 
 Navigate to a route's path with `useNavigation` hook.  
 ```javascript
@@ -60,14 +69,6 @@ const handleOnClick = event => {
 }
 ```
 
-To lazy load a component provide a `lazyFallback` component.  
-```javascript
-<Router
-  routes={routes}
-  notFound={CustomNotFound}
-  lazyFallback={CustomFallbackComponent}
-/>
-```  
 
 <!--
 ## Route Guards
