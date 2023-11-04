@@ -1,9 +1,8 @@
 {
   "name": "@sswahn/router",
-  "version": "1.0.0-beta.10",
+  "version": "1.0.0-beta.11",
   "license": "MIT",
   "description": "A lightweight and flexible router.",
-  "type": "module",
   "main": "src/index.js",
   "keywords": [
     "router",
