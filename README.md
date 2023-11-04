@@ -8,7 +8,7 @@ A lightweight and flexible router.
 - Custom 404 (Not Found) component
 - Lazy loading components
 - Route caching
-- Programmatic navigation hook
+- Programmatic navigation
 <!-- - Route guards (before and after route change) -->
 
 ## Installation  
@@ -64,7 +64,7 @@ To lazy load a component provide a `lazyFallback` component.
 </Router>
 ```  
 
-Navigate to a route's path with `useNavigation` hook.  
+Navigate to a route's path with `navigateTo`.  
 ```javascript
 import { useContext } from 'react'
 import { RouterContext } from '@sswahn/router'
