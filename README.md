@@ -43,7 +43,7 @@ Define a custom 404 component.
 const CustomNotFound = () => <div>Custom 404 - Not Found</div>
 ```
 
-Add your custom 404 component the `Router` component.  
+Add your custom 404 component the `Router`.  
 ```javascript
 <Router routes={routes} notFound={CustomNotFound} />
 ```
