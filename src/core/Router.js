@@ -23,7 +23,11 @@ const Router = ({ routes, notFoundComponent, beforeRouteChange, afterRouteChange
       }
       return MatchedRoute.component()
     }
-    return notFoundComponent ? notFoundComponent() : NotFoundComponent()
+    if (notFoundComponent) {
+      return notFoundComponent()
+    } else {
+      throw new Error('Route not found.')
+    }
   }
 
   const handleRouteChange = () => {
