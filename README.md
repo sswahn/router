@@ -20,7 +20,7 @@ Import the router component.
 import Router from '@sswahn/router'
 ```  
 
-Define your route components and custom 404 component.  
+Define your routes path and components.  
 ```javascript
 import Home from './components/Home'
 import About from './components/About'
