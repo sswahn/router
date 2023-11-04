@@ -1,11 +1,10 @@
 {
   "name": "@sswahn/router",
-  "version": "1.0.0-beta.4",
+  "version": "1.0.0-beta.5",
   "license": "MIT",
   "description": "A lightweight and flexible router.",
   "type": "module",
   "main": "src/index.js",
-  "module": "dist/bundle.js",
   "keywords": [
     "router",
     "navigation"
@@ -13,16 +12,5 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/sswahn/router"
-  },
-  "scripts": {
-    "start": "webpack --mode development",
-    "build": "webpack --mode production"
-  },
-  "devDependencies": {
-    "webpack": "^5.89.0",
-    "@babel/core": "^7.23.2",
-    "@babel/preset-env": "^7.23.2",
-    "@babel/preset-react": "^7.22.15",
-    "babel-loader": "^9.1.3"
   }
 }
