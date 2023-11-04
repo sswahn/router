@@ -22,8 +22,8 @@ export default function Provider({ children }) {
   }
   
   return (
-    <Context.Provider value={{context, dispatch, navigateTo}}>
+    <RouterContext.Provider value={{context, dispatch, navigateTo}}>
       {children}
-    </Context.Provider>
+    </RouterContext.Provider>
   )
 }
