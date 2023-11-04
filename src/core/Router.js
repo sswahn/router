@@ -1,5 +1,5 @@
-import Provider from './Provider.js'
-import Handler from './Handler.js'
+import Provider from './Provider'
+import Handler from './Handler'
 
 export default function Router({ routes, notFound, lazyFallback }) {
   return (
