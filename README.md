@@ -31,32 +31,37 @@ const routes = [
   { path: '/about', component: About },
   { path: '/contact', component: Contact },
 ]
+```
 
+Create the `Router` component using your routes array.  
+```javascript
+<Router routes={routes} />
+```
+
+Define a custom 404 component.  
+```javascript
 const CustomNotFound = () => <div>Custom 404 - Not Found</div>
 ```
 
-Create the `Router` component in your application.  
+Add your custom 404 component the `Router` component.  
 ```javascript
-<Router
-  routes={routes}
-  notFoundComponent={CustomNotFound}
-/>
+<Router routes={routes} notFound={CustomNotFound} />
 ```
 
 ## Route Guards
 You can define route guards to run code before and after route changes.  
 ```javascript
 const beforeRouteChange = path => {
-  console.log(`Before navigating to ${path}`);
-};
+  console.log(`Before navigating to ${path}`)
+}
 
 const afterRouteChange = path => {
-  console.log(`After navigating to ${path}`);
-};
+  console.log(`After navigating to ${path}`)
+}
 
 <Router
   routes={routes}
-  notFoundComponent={CustomNotFound}
+  notFound={CustomNotFound}
   beforeRouteChange={beforeRouteChange}
   afterRouteChange={afterRouteChange}
 />
