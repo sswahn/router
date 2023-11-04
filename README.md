@@ -17,7 +17,7 @@ npm install @sswahn/router
 ## Usage
 Import the router component.  
 ```javascript
-import Router from '@sswahn/router'
+import { Router } from '@sswahn/router'
 ```  
 
 Define your routes paths and their associated components.  
@@ -47,6 +47,15 @@ Add your custom 404 component the `Router`.
 ```javascript
 <Router routes={routes} notFound={CustomNotFound} />
 ```
+
+Navigate to a route path.  
+```javascript
+import { navigateTo } from '@sswahn/router'
+
+const handleOnClick = event => {
+  navigateTo('/about')
+}
+```  
 
 ## Route Guards
 You can define route guards to run code before and after route changes.  
