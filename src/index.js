@@ -1,7 +1,7 @@
 import Router from './core/Router.js'
-import { navigateTo } from './core/navigateTo.js'
+import { useNavigation } from './core/navigateTo.js'
 
 export {
   Router,
-  navigateTo
+  useNavigation
 }
