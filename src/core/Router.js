@@ -1,48 +1,54 @@
+const RouteCache = new Map()
 
-const Router = ({ routes, notFound, beforeRouteChange, afterRouteChange }) => {
+export default function Handler({ routes, notFound, lazyFallback }) {
+  const [route, setRoute] = useState(window.location.pathname || '/')
+  const [context, dispatch] = useContext(Context)
+
   const matchRoute = path => {
+    if (RouteCache.has(path)) {
+      return RouteCache.get(path)
+    }
     const matchedRoute = routes.find(({ path: routePath }) => {
       const pathSegments = path.split('/').filter(Boolean)
       const routeSegments = routePath.split('/').filter(Boolean)
       return (
         pathSegments.length === routeSegments.length &&
-        routeSegments.every(
-          (segment, index) => segment.startsWith(':') || segment === pathSegments[index]
-        )
+        routeSegments.every((segment, index) => segment.startsWith(':') || segment === pathSegments[index])
       )
     })
-    return matchedRoute || null
+    const component = matchedRoute ? matchedRoute.component : null
+    RouteCache.set(path, component)
+    return component
   }
 
-  const renderComponent = route => {
-    const MatchedRoute = matchRoute(route)
-    if (MatchedRoute) {
-      if (beforeRouteChange) {
-        beforeRouteChange(route)
-      }
-      return MatchedRoute.component()
-    }
-    if (notFound) {
-      return notFound()
-    } else {
-      throw new Error('Route not found.')
-    }
+  const renderComponent = () => {
+    const MatchedComponent = matchRoute(route)
+    return MatchedComponent ? <MatchedComponent /> : <NotFound />
   }
-
-  const handleRouteChange = event => {
-    const path = event.state 
-      ? event.state.path 
-      : window.location.pathname
-    renderComponent(path)
-    if (afterRouteChange) {
-      afterRouteChange(path)
-    }
+  
+  const handleRouteChange = () => {
+    dispatch({ type: 'router', payload: window.location.pathname })
   }
-    
-  window.addEventListener('popstate', handleRouteChange) // Listen for popstate events when the user navigates using the browser's back/forward buttons
-  window.addEventListener('pushstate', handleRouteChange) // Listen for pushstate events when you use history.pushState
+  
+  useEffect(() => {
+    // handles browser navigation: back/forward buttons
+    window.addEventListener('popstate', handleRouteChange)
+    return () => {
+      window.removeEventListener('popstate', handleRouteChange)
+    }
+  }, [])
+  
+  useEffect(() => {
+    // handles programatic navigation: navigateTo
+    if (context.router === window.location.pathname) {
+      setRoute(context.router)
+    }
+  }, [context.router])
 
-  return renderComponent(window.location.pathname || '/')
+  return lazyFallback ? (
+      <Suspense fallback={<lazyFallback />}>
+        {renderComponent()}
+      </Suspense>
+    ) : renderComponent()
+  }
 }
-
-export default Router
