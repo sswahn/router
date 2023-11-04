@@ -14,7 +14,7 @@ export default function Provider({ children }) {
         return state
     }
   }
-  const [state, dispatch] = useReducer(reducer, data)
+  const [context, dispatch] = useReducer(reducer, data)
   
   const navigateTo = (path) => {
     history.pushState(null, '', path)
@@ -22,7 +22,7 @@ export default function Provider({ children }) {
   }
   
   return (
-    <Context.Provider value={{state, dispatch, navigateTo}}>
+    <Context.Provider value={{context, dispatch, navigateTo}}>
       {children}
     </Context.Provider>
   )
