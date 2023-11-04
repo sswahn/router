@@ -4,7 +4,7 @@ const RouteCache = new Map()
 
 export default function Handler({ routes, notFound, lazyFallback }) {
   const [route, setRoute] = useState(window.location.pathname || '/')
-  const [context, dispatch] = useContext(RouterContext)
+  const {context, dispatch} = useContext(RouterContext)
 
   const matchRoute = path => {
     if (RouteCache.has(path)) {
