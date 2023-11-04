@@ -71,7 +71,7 @@ import { RouterContext } from '@sswahn/router'
 
 ...
 
-const navigateTo = useContext(RouterContext)
+const { navigateTo } = useContext(RouterContext)
 
 const handleOnClick = event => {
   navigateTo('/about')
