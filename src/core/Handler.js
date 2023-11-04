@@ -46,9 +46,8 @@ export default function Handler({ routes, notFound, lazyFallback }) {
   }, [context.router])
 
   return lazyFallback ? (
-      <Suspense fallback={<lazyFallback />}>
-        {renderComponent()}
-      </Suspense>
-    ) : renderComponent()
-  }
+    <Suspense fallback={<lazyFallback />}>
+      {renderComponent()}
+    </Suspense>
+  ) : renderComponent()
 }
