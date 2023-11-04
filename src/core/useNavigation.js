@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { Context } from './Provider'
+import { Context } from './Provider.js'
 
 export function useNavigation() {
   const { dispatch } = useContext(Context)
