@@ -1,2 +1,7 @@
 import Router from './core/Router.js'
-export default Router
+import { navigateTo } from './core/navigateTo.js'
+
+export {
+  Router,
+  navigateTo
+}
