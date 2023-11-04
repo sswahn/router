@@ -4,6 +4,7 @@
   "license": "MIT",
   "description": "A lightweight and flexible router.",
   "main": "src/index.js",
+  "type": "module",
   "keywords": [
     "router",
     "navigation"
