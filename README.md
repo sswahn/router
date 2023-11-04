@@ -20,7 +20,7 @@ Import the router component.
 import { Router } from '@sswahn/router'
 ```  
 
-Define your routes paths and their associated components.  
+Define your routes' paths and their associated components.  
 ```javascript
 import Home from './components/Home'
 import About from './components/About'
@@ -48,7 +48,7 @@ Add your custom 404 component the `Router`.
 <Router routes={routes} notFound={CustomNotFound} />
 ```
 
-Navigate to a route path.  
+Navigate to a route's path.  
 ```javascript
 import { navigateTo } from '@sswahn/router'
 
