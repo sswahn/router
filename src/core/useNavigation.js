@@ -2,7 +2,7 @@ import { useContext } from 'react'
 import { Context } from './Provider.js'
 
 export function useNavigation() {
-  const { dispatch } = useContext(Context)
+  const [context, dispatch] = useContext(Context)
   
   const navigateTo = (path) => {
     history.pushState(null, '', path)
