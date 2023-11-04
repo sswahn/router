@@ -12,5 +12,8 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/sswahn/router"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0"
   }
 }
