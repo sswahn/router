@@ -1,14 +1,13 @@
-import { useState, useEffect, isValidElement, Suspense } from 'react'
+import { useState, useEffect, isValidElement, Children, Suspense } from 'react'
 
 const Router = ({ lazyFallback, children }) => {
   const [path, setPath] = useState(window.location.pathname)
 
-  const route = React.Children.map(children, (child) => {
-    if (isValidElement(child) && path === child.props.path) {
+  const route = Children.toArray(children).find(child => {
+    if (!child.props.path || path === child.props.path) {
       const Component = child.props.component
       return <Component />
     }
-    return null
   })
   
   const handlePopState = event => {
