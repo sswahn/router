@@ -2,8 +2,8 @@ import { useContext, useEffect, Suspense } from 'react'
 import { RouterContext } from './Provider.js'
 import Provider from './Provider.js'
 
-export default function Router({ lazyFallback, children }) {
-  const { context, dispatch } = useContext(RouterContext)
+const Router = ({ lazyFallback, children }) => {
+  const { context, dispatch } = useContext(RouterContext) // cant use this here because Router is not inside Provider
 
   const handleRouteChange = event => {
     dispatch({ type: 'router', payload: window.location.pathname })
@@ -28,3 +28,5 @@ export default function Router({ lazyFallback, children }) {
     </Provider>
   )
 }
+
+export default Router
