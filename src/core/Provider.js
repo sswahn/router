@@ -3,7 +3,7 @@ import Handler from './Handler.js'
 
 export const RouterContext = createContext([])
 
-const Router = ({ lazyFallback, children }) => {
+const Router = ({ children }) => {
   const data = {
     router: window.location.pathname || '/'
   }
@@ -18,7 +18,7 @@ const Router = ({ lazyFallback, children }) => {
   const [context, dispatch] = useReducer(reducer, data)
   return (
     <RouterContext.Provider value={{context, dispatch}}>
-      <Handler lazyFallback={lazyFallback}>{children}</Handler>
+      {children}
     </RouterContext.Provider>
   )
 }
