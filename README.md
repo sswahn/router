@@ -5,9 +5,8 @@ A lightweight and flexible router.
 ## Features
 
 - Custom route configuration
-- Custom 404 (Not Found) component
+- Catch-all 404 (Not Found) component
 - Lazy loading components
-- Route caching
 - Programmatic navigation
 <!-- - Route guards (before and after route change) -->
 
