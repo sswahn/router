@@ -1,6 +1,6 @@
 import { useState, useEffect, Suspense } from 'react'
 
-const Handler = ({ lazyFallback, children }) => {
+const Router = ({ lazyFallback, children }) => {
   const [path, setPath] = useState(window.location.pathname)
   
   const handleRouteChange = event => {
@@ -25,4 +25,4 @@ const Handler = ({ lazyFallback, children }) => {
   )
 }
 
-export default Handler
+export default Router
