@@ -1,7 +1,13 @@
-import { useState, useEffect, Suspense } from 'react'
+import { useState, useEffect, isValidElement, Suspense } from 'react'
 
 const Router = ({ lazyFallback, children }) => {
   const [path, setPath] = useState(window.location.pathname)
+
+  const routes = React.Children.map(children, (child) => {
+    if (isValidElement(child) && path === child.props.path) {
+      return child.props.component
+    }
+  })
   
   const handlePopState = event => {
     setPath(window.location.pathname)
@@ -24,12 +30,10 @@ const Router = ({ lazyFallback, children }) => {
       window.removeEventListener('routechange', handleRouteChange)
     }
   }, [])
-
-  console.log('Router rendered.')
   
   return (
     <Suspense fallback={lazyFallback && <lazyFallback />}>
-      {path && children}
+      {routes}
     </Suspense>
   )
 }
