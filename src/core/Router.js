@@ -9,7 +9,7 @@ export default function Router({ lazyFallback, children }) {
     dispatch({ type: 'router', payload: window.location.pathname })
   }
 
-  useEffect(() => { // handles browser navigation: back/forward buttons
+  useEffect(() => { // handles browser navigation: back/forward
     window.addEventListener('popstate', handleRouteChange)
     return () => {
       window.removeEventListener('popstate', handleRouteChange)
@@ -17,7 +17,7 @@ export default function Router({ lazyFallback, children }) {
   }, [])
   
   useEffect(() => { // handles programatic navigation: navigateTo
-    // just need to rerender component on context.router change
+    
   }, [context.router])
   
   return (
