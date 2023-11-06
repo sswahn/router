@@ -28,7 +28,7 @@ import About from './components/About'
 import Contact from './components/Contact'
 import NotFound from './components/NotFound'
 
-<Router routes={routes}>
+<Router>
   <Route path="/" component={Home} />
   <Route path="/about" component={About} />
   <Route path="/contact" component={Contact} />
