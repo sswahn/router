@@ -24,6 +24,8 @@ const Router = ({ lazyFallback, children }) => {
       window.removeEventListener('routechange', handleRouteChange)
     }
   }, [])
+
+  console.log('Router rendered.')
   
   return (
     <Suspense fallback={lazyFallback && <lazyFallback />}>
