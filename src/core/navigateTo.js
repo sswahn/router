@@ -1,4 +1,4 @@
 export const navigateTo = path => {
   window.history.pushState({}, '', path)
-  window.dispatchEvent(new Event('popstate'))
+  window.dispatchEvent(new Event('routechange'))
 }
