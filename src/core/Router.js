@@ -8,8 +8,7 @@ const Router = ({ lazyFallback, children }) => {
   }
 
   const handleRouteChange = event => {
-    console.log('handleRouteChange event: ', event)
-    setPath(event.originalEvent.detail.path)
+    setPath(event.detail.path)
   }
 
   useEffect(() => { // handles browser navigation: back/forward
