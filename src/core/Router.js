@@ -1,6 +1,5 @@
 import { useEffect, Suspense } from 'react'
 import Provider from './Provider.js'
-import Handler from './Handler.js'
 
 export default function Router({ lazyFallback, children }) {
 
