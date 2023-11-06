@@ -3,14 +3,18 @@ import { useState, useEffect, Suspense } from 'react'
 const Router = ({ lazyFallback, children }) => {
   const [path, setPath] = useState(window.location.pathname)
   
+  const handlePopState = event => {
+    setPath(window.location.pathname)
+  }
+
   const handleRouteChange = event => {
     setPath(event.detail.path)
   }
 
   useEffect(() => { // handles browser navigation: back/forward
-    window.addEventListener('popstate', handleRouteChange)
+    window.addEventListener('popstate', handlePopState)
     return () => {
-      window.removeEventListener('popstate', handleRouteChange)
+      window.removeEventListener('popstate', handlePopState)
     }
   }, [])
   
