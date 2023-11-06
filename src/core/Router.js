@@ -8,6 +8,7 @@ const Router = ({ lazyFallback, children }) => {
   }
 
   const handleRouteChange = event => {
+    console.log('handleRouteChange event: ', event)
     setPath(event.detail.path)
   }
 
