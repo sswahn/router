@@ -1,11 +1,10 @@
-import { useContext, useEffect, Suspense } from 'react'
-import { RouterContext } from './Router.js'
+import { useState, useEffect, Suspense } from 'react'
 
 const Handler = ({ lazyFallback, children }) => {
-  const { context, dispatch } = useContext(RouterContext) // cant use this here because Router is not inside Provider
-
+  const [path, setPath] = useState(window.location.pathname)
+  
   const handleRouteChange = event => {
-    dispatch({ type: 'router', payload: window.location.pathname })
+    setPath(window.location.pathname)
   }
 
   useEffect(() => { // handles browser navigation: back/forward
@@ -17,7 +16,7 @@ const Handler = ({ lazyFallback, children }) => {
   
   useEffect(() => { // handles programatic navigation: navigateTo
     
-  }, [context.router])
+  }, [window.location.pathname, path])
   
   return (
     <Suspense fallback={lazyFallback && <lazyFallback />}>
