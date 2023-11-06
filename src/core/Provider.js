@@ -1,5 +1,4 @@
 import { createContext, useReducer } from 'react'
-import Handler from './Handler.js'
 
 export const RouterContext = createContext([])
 
