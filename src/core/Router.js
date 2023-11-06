@@ -14,10 +14,6 @@ const Router = ({ lazyFallback, children }) => {
     }
   }, [])
   
-  useEffect(() => { // handles programatic navigation: navigateTo
-    
-  }, [window.location.pathname, path])
-  
   return (
     <Suspense fallback={lazyFallback && <lazyFallback />}>
       {children}
