@@ -3,10 +3,11 @@ import { useState, useEffect, isValidElement, Suspense } from 'react'
 const Router = ({ lazyFallback, children }) => {
   const [path, setPath] = useState(window.location.pathname)
 
-  const routes = React.Children.map(children, (child) => {
+  const route = React.Children.map(children, (child) => {
     if (isValidElement(child) && path === child.props.path) {
       return child.props.component
     }
+    return null
   })
   
   const handlePopState = event => {
@@ -33,7 +34,7 @@ const Router = ({ lazyFallback, children }) => {
   
   return (
     <Suspense fallback={lazyFallback && <lazyFallback />}>
-      {routes}
+      {route}
     </Suspense>
   )
 }
