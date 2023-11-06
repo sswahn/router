@@ -16,14 +16,8 @@ const Router = ({ lazyFallback, children }) => {
     }
   }
   const [context, dispatch] = useReducer(reducer, data)
-  
-  const navigateTo = path => {
-    history.pushState(null, '', path)
-    dispatch({ type: 'router', payload: path })
-  }
-  
   return (
-    <RouterContext.Provider value={{context, dispatch, navigateTo}}>
+    <RouterContext.Provider value={{context, dispatch}}>
       <Handler lazyFallback={lazyFallback}>{children}</Handler>
     </RouterContext.Provider>
   )
