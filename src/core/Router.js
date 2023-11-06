@@ -1,8 +1,7 @@
 import { useContext, useEffect, Suspense } from 'react'
-import { RouterContext } from './Provider.js'
-import Provider from './Provider.js'
+import { RouterContext } from './Router.js'
 
-const Router = ({ lazyFallback, children }) => {
+const Handler = ({ lazyFallback, children }) => {
   const { context, dispatch } = useContext(RouterContext) // cant use this here because Router is not inside Provider
 
   const handleRouteChange = event => {
@@ -21,12 +20,10 @@ const Router = ({ lazyFallback, children }) => {
   }, [context.router])
   
   return (
-    <Provider>
-      <Suspense fallback={lazyFallback && <lazyFallback />}>
-        {children}
-      </Suspense>
-    </Provider>
+    <Suspense fallback={lazyFallback && <lazyFallback />}>
+      {children}
+    </Suspense>
   )
 }
 
-export default Router
+export default Handler
