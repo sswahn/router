@@ -29,7 +29,7 @@ const Router = ({ lazyFallback, children }) => {
   
   return (
     <Suspense fallback={lazyFallback && <lazyFallback />}>
-      {children}
+      {path && children}
     </Suspense>
   )
 }
