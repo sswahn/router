@@ -1,5 +1,5 @@
 import { useContext, useEffect, Suspense } from 'react'
-import { RouterContext } from './Provider'
+import { RouterContext } from './Provider.js'
 import Provider from './Provider.js'
 
 export default function Router({ lazyFallback, children }) {
