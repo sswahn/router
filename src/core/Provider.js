@@ -1,7 +1,7 @@
 
 export const Context = createContext([])
 
-export default function Provider({ children }) {
+const Provider = ({ children }) => {
   const data = {
     router: window.location.pathname || '/'
   }
@@ -20,3 +20,5 @@ export default function Provider({ children }) {
     </Context.Provider>
   )
 }
+
+export default Provider
