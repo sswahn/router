@@ -14,9 +14,16 @@ const Router = ({ lazyFallback, children }) => {
     }
   }, [])
   
+  useEffect(() => { // handles programmatic navigation
+    window.addEventListener('routechange', handleRouteChange)
+    return () => {
+      window.removeEventListener('routechange', handleRouteChange)
+    }
+  }, [])
+  
   return (
     <Suspense fallback={lazyFallback && <lazyFallback />}>
-      {path && children}
+      {children}
     </Suspense>
   )
 }
