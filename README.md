@@ -19,7 +19,7 @@ npm install @sswahn/router
 ## Usage
 Import the router component.  
 ```javascript
-import { Router } from '@sswahn/router'
+import { Router, Route } from '@sswahn/router'
 ```  
 
 Define your routes' paths and their associated components.  
@@ -27,40 +27,21 @@ Define your routes' paths and their associated components.
 import Home from './components/Home'
 import About from './components/About'
 import Contact from './components/Contact'
+import NotFound from './components/NotFound'
 
-const routes = [
-  { path: '/', component: Home },
-  { path: '/about', component: About },
-  { path: '/contact', component: Contact },
-]
-```
-
-Create the `Router` component using your routes array.  
-```javascript
 <Router routes={routes}>
-  <App />
-</Router>
-```
-
-Define a custom 404 component.  
-```javascript
-const CustomNotFound = () => <div>Custom 404 - Not Found</div>
-```
-
-Add your custom 404 component the `Router`.  
-```javascript
-<Router routes={routes} notFound={CustomNotFound}>
-  <App />
+  <Route path="/" component={Home} />
+  <Route path="/about" component={About} />
+  <Route path="/contact" component={Contact} />
+  <Route component={NotFound}
 </Router>
 ```  
 
 To lazy load a component provide a `lazyFallback` component.  
 ```javascript
-<Router
-  routes={routes}
-  notFound={CustomNotFound}
-  lazyFallback={CustomFallbackComponent}>
-  <App />
+<Router lazyFallback={CustomFallbackComponent}>
+  <Route path="/" component={Home} />
+  ...
 </Router>
 ```  
 
