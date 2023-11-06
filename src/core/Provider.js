@@ -2,7 +2,7 @@ import { createContext, useReducer } from 'react'
 
 export const RouterContext = createContext([])
 
-const Router = ({ children }) => {
+const Provider = ({ children }) => {
   const data = {
     router: window.location.pathname || '/'
   }
@@ -22,4 +22,4 @@ const Router = ({ children }) => {
   )
 }
 
-export default Router
+export default Provider
