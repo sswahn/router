@@ -1,4 +1,4 @@
-const Route = ({ path, component: Component }) => {
+const Route = ({ component: Component }) => {
   
   console.log('Route rendered')
 
