@@ -1,8 +1,9 @@
 import { createContext, useReducer } from 'react'
+import Handler from './Handler.js'
 
 export const RouterContext = createContext([])
 
-export default function Provider({ children }) {
+const Router = ({ lazyFallback, children }) => {
   const data = {
     router: window.location.pathname || '/'
   }
@@ -23,7 +24,9 @@ export default function Provider({ children }) {
   
   return (
     <RouterContext.Provider value={{context, dispatch, navigateTo}}>
-      {children}
+      <Handler lazyFallback={lazyFallback}>{children}</Handler>
     </RouterContext.Provider>
   )
 }
+
+export default Router
