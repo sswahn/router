@@ -5,7 +5,8 @@ const Router = ({ lazyFallback, children }) => {
 
   const route = React.Children.map(children, (child) => {
     if (isValidElement(child) && path === child.props.path) {
-      return child.props.component
+      const Component = child.props.component
+      return <Component />
     }
     return null
   })
