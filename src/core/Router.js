@@ -1,7 +1,13 @@
-import { useEffect, Suspense } from 'react'
+import { useContext, useEffect, Suspense } from 'react'
+import { RouterContext } from './Provider'
 import Provider from './Provider.js'
 
 export default function Router({ lazyFallback, children }) {
+  const { context, dispatch } = useContext(RouterContext)
+
+  const handleRouteChange = event => {
+    dispatch({ type: 'router', payload: window.location.pathname })
+  }
 
   useEffect(() => { // handles browser navigation: back/forward buttons
     window.addEventListener('popstate', handleRouteChange)
@@ -11,9 +17,7 @@ export default function Router({ lazyFallback, children }) {
   }, [])
   
   useEffect(() => { // handles programatic navigation: navigateTo
-    if (context.router === window.location.pathname) {
-      setRoute(context.router)
-    }
+    // just need to rerender component on context.router change
   }, [context.router])
   
   return (
