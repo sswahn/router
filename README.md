@@ -36,7 +36,7 @@ import NotFound from './components/NotFound'
   <Route path="/" component={<Home />} />
   <Route path="/about" component={<About />} />
   <Route path="/contact" component={<Contact />} />
-  <Route component={NotFound}
+  <Route component={<NotFound />}
 </Router>
 ```  
 
