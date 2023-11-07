@@ -58,28 +58,13 @@ const handleOnClick = event => {
 }
 ```
 
+## Peer Dependencies
 
-<!--
-## Route Guards
-You can define route guards to run code before and after route changes.  
-```javascript
-const beforeRouteChange = path => {
-  console.log(`Before navigating to ${path}`)
-}
+Router requires React as a peer dependency. You should have React installed in your project with a version compatible with this library.
 
-const afterRouteChange = path => {
-  console.log(`After navigating to ${path}`)
-}
+- [React](https://reactjs.org/): ^18.2.0
 
-<Router
-  routes={routes}
-  notFound={CustomNotFound}
-  lazyFallback={CustomFallbackComponent}
-  beforeRouteChange={beforeRouteChange}
-  afterRouteChange={afterRouteChange}>
-  <App />
-</Router>
-```
+
 -->
 ## License
 Router is [MIT Licensed](https://github.com/sswahn/router/blob/main/LICENSE)
