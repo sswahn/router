@@ -1,4 +1,4 @@
-import { useState, useEffect, isValidElement, Children, Suspense } from 'react'
+import { useState, useEffect, Children, Suspense } from 'react'
 
 const Router = ({ lazyFallback, children }) => {
   const [path, setPath] = useState(window.location.pathname)
