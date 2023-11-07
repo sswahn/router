@@ -1,5 +1,9 @@
 const Route = ({ component: Component }) => {
-  const Result = Component()
-  return <Result />
+  if (typeof Component === 'function') {
+    const Result = Component()
+    return <Result />
+  } else {
+    return Component
+  }
 }
 export default Route
