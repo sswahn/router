@@ -1,4 +1,4 @@
-const { isValidElement } from 'react'
+import { isValidElement } from 'react'
 
 const Route = ({ component: Component }) => {
 
