@@ -1,4 +1,4 @@
 const Route = ({ component: Component }) => {
-  return <Component /> 
+  return null
 }
 export default Route
