@@ -1,6 +1,6 @@
 {
   "name": "@sswahn/router",
-  "version": "1.1.7",
+  "version": "1.1.8",
   "license": "MIT",
   "description": "A lightweight and flexible routing solution. Router simplifies the process of implementing client-side routing in React applications, making it easier to manage different views and navigate between them while maintaining a component-based approach.",
   "main": "src/index.js",
