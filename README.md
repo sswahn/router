@@ -62,7 +62,7 @@ const handleOnClick = event => {
 
 Router requires React as a peer dependency. You should have React installed in your project with a version compatible with this library.
 
-- [React](https://reactjs.org/): ^18.2.0
+[React](https://reactjs.org/): ^18.2.0
 
 
 ## License
