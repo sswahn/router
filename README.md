@@ -1,4 +1,5 @@
-# Router
+# Router - [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+
 
 A lightweight and flexible router.
 
