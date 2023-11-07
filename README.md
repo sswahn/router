@@ -33,17 +33,17 @@ import Contact from './components/Contact'
 import NotFound from './components/NotFound'
 
 <Router>
-  <Route path="/" component={Home} />
-  <Route path="/about" component={About} />
-  <Route path="/contact" component={Contact} />
+  <Route path="/" component={<Home />} />
+  <Route path="/about" component={<About />} />
+  <Route path="/contact" component={<Contact />} />
   <Route component={NotFound}
 </Router>
 ```  
 
 To lazy load a component provide a `lazyFallback` component.  
 ```javascript
-<Router lazyFallback={CustomLoadingSpinner}>
-  <Route path="/" component={Home} />
+<Router lazyFallback={<CustomLoadingSpinner />}>
+  <Route path="/" component={<Home />} />
   ...
 </Router>
 ```  
@@ -61,9 +61,9 @@ Use a function to return a component.
 ```javascript
 <Route path="/dashboard" component={() => {
   if (userIsAuthenticated) {
-    return AuthenticatedDashboard
+    return <AuthenticatedDashboard />
   } else {
-    return PublicDashboard
+    return <PublicDashboard />
   }
 }} />
 ```  
