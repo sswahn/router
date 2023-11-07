@@ -59,6 +59,17 @@ const handleOnClick = event => {
 }
 ```
 
+Use function-based components. 
+```javascript
+<Route path="/dashboard" component={() => {
+  if (userIsAuthenticated) {
+    return <AuthenticatedDashboard />
+  } else {
+    return <PublicDashboard />
+  }
+}} />
+```
+
 ## Peer Dependencies
 
 Router requires React as a peer dependency. You should have React installed in your project with a version compatible with this library.
