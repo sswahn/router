@@ -5,8 +5,13 @@ const Router = ({ lazyFallback, children }) => {
 
   const route = Children.toArray(children).find(child => {
     if (!child.props.path || path === child.props.path) {
-      const Component = child.props.component
-      return <Component />
+      if (typeof child.props.component === 'function') {
+        const Component = child.props.component()
+        return <Component />
+      } else {
+        const Component = child.props.component
+        return <Component />
+      }
     }
   })
   
