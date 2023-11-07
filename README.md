@@ -1,14 +1,16 @@
 # Router · [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/sswahn/router/blob/main/LICENSE) ![Weekly Downloads](https://img.shields.io/npm/dw/@sswahn/router) ![GitHub stars](https://img.shields.io/github/stars/sswahn/router?style=social)
 
-
-A lightweight and flexible router.
+Router is a lightweight and flexible routing solution. It simplifies the process of implementing client-side routing in React applications, making it easier to manage different views and navigate between them while maintaining a component-based approach.
 
 ## Features
 
-- Customize route configuration
-- Catch-all 404 (Not Found) component
-- Lazy loading components
-- Programmatic navigation
+- **Component-Based Routing**: The library is designed to work with React's component-based architecture, allowing you to define routes using individual components.
+- **"Not Found" Handling**: The library provides a built-in mechanism to handle "Not Found" scenarios when no matching route is found. This is typically achieved by using a component without a path prop.
+- **Programmatic Navigation**: It supports programmatic navigation through a navigateTo function, enabling you to navigate to specific routes in your application.
+- **Asynchronous Loading**: The library supports lazy loading of components through React's Suspense mechanism, allowing for a smoother user experience.
+- **Simple and Efficient**: The routing logic is implemented with simplicity and efficiency in mind, allowing for a clean and straightforward routing solution.
+- **Customization**: The library is flexible and can be customized to fit the specific needs of your application.
+
 <!-- - Route guards (before and after route change) -->
 
 ## Installation  
