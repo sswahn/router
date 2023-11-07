@@ -65,6 +65,5 @@ Router requires React as a peer dependency. You should have React installed in y
 - [React](https://reactjs.org/): ^18.2.0
 
 
--->
 ## License
 Router is [MIT Licensed](https://github.com/sswahn/router/blob/main/LICENSE)
