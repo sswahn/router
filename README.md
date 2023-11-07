@@ -61,9 +61,9 @@ Use a function to return a component.
 ```javascript
 <Route path="/dashboard" component={() => {
   if (userIsAuthenticated) {
-    return <AuthenticatedDashboard />
+    return AuthenticatedDashboard
   } else {
-    return <PublicDashboard />
+    return PublicDashboard
   }
 }} />
 ```  
