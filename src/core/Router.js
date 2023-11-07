@@ -3,19 +3,6 @@ import { useState, useEffect, Children, Suspense } from 'react'
 const Router = ({ lazyFallback, children }) => {
   const [path, setPath] = useState(window.location.pathname)
 
-  /*
-  const route = Children.toArray(children).find(child => {
-    if (!child.props.path || path === child.props.path) {
-      if (typeof child.props.component === 'function') {
-        const Component = child.props.component()
-        return <Component />
-      } else {
-        const Component = child.props.component
-        return <Component />
-      }
-    }
-  }) */
-
   const route = Children.toArray(children).find(child => {
     return child.props.path === path
   })
