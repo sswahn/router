@@ -42,7 +42,7 @@ import NotFound from './components/NotFound'
 
 To lazy load a component provide a `lazyFallback` component.  
 ```javascript
-<Router lazyFallback={CustomFallbackComponent}>
+<Router lazyFallback={CustomLoadingSpinner}>
   <Route path="/" component={Home} />
   ...
 </Router>
