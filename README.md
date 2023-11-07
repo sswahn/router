@@ -59,7 +59,7 @@ const handleOnClick = event => {
 }
 ```
 
-Use function-based components. 
+Use a function to return a component.  
 ```javascript
 <Route path="/dashboard" component={() => {
   if (userIsAuthenticated) {
@@ -68,7 +68,7 @@ Use function-based components.
     return <PublicDashboard />
   }
 }} />
-```
+```  
 
 ## Peer Dependencies
 
