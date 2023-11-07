@@ -1,5 +1,4 @@
-# Router · [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT](https://github.com/sswahn/router/blob/main/LICENSE)
-
+# Router · [![Custom License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT](https://github.com/sswahn/router/blob/main/LICENSE)
 
 A lightweight and flexible router.
 
