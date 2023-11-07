@@ -1,5 +1,4 @@
-# Router · [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/sswahn/router/blob/main/LICENSE) ![npm version](https://img.shields.io/npm/v/@sswahn/router)
- ![Weekly Downloads](https://img.shields.io/npm/dw/@sswahn/router) ![GitHub stars](https://img.shields.io/github/stars/sswahn/router?style=social)
+# Router · [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/sswahn/router/blob/main/LICENSE) ![npm version](https://img.shields.io/npm/v/@sswahn/router) ![Weekly Downloads](https://img.shields.io/npm/dw/@sswahn/router) ![GitHub stars](https://img.shields.io/github/stars/sswahn/router?style=social)
 
 A lightweight and flexible routing solution. Router simplifies the process of implementing client-side routing in React applications, making it easier to manage different views and navigate between them while maintaining a component-based approach.
 
