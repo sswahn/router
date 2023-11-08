@@ -1,6 +1,6 @@
 import { useState, useEffect, Children, Suspense } from 'react'
 
-const Router = ({ lazyFallback, children }) => {
+const Router = ({ lazyFallback: LazyFallback, children }) => {
   const [path, setPath] = useState(window.location.pathname)
 
   const route = Children.toArray(children).find(child => {
@@ -8,8 +8,8 @@ const Router = ({ lazyFallback, children }) => {
   })
 
   const handleLazyFallback = () => {
-    if (lazyFallback) {
-      return lazyFallback()
+    if (LazyFallback) {
+      return LazyFallback()
     }
   }
   
