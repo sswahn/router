@@ -23,6 +23,12 @@ const Router = ({ lazyFallback: LazyFallback, children }) => {
 
   useEffect(() => { // handles browser navigation: back/forward
     window.addEventListener('popstate', handlePopState)
+
+    /* Handle initial/direct page load by setting the path. needs testing.
+    if (window.location.pathname !== path) {
+      setPath(window.location.pathname);
+    } */
+    
     return () => {
       window.removeEventListener('popstate', handlePopState)
     }
