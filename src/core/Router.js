@@ -9,7 +9,7 @@ const Router = ({ lazyFallback, children }) => {
 
   const handleLazyFallback = () => {
     if (lazyFallback) {
-      return lazyFallback
+      return lazyFallback()
     }
   }
   
