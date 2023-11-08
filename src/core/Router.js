@@ -4,7 +4,7 @@ const Router = ({ lazyFallback, children }) => {
   const [path, setPath] = useState(window.location.pathname)
 
   const route = Children.toArray(children).find(child => {
-    return child.props.path === path
+    return path === child.props.path || !child.props.path
   })
 
   const handleLazyFallback = () => {
