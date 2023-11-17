@@ -11,12 +11,6 @@ const Router = ({ lazyFallback: LazyFallback, children }) => {
   const route = Children.toArray(children).find((child) => {
     return !child.props.path || path === child.props.path || matchPath(child.props.path)
   })
-
-  const handleLazyFallback = () => {
-    if (LazyFallback) {
-      return LazyFallback()
-    }
-  }
   
   const handlePopState = event => {
     setPath(window.location.pathname)
@@ -47,7 +41,7 @@ const Router = ({ lazyFallback: LazyFallback, children }) => {
   }, [])
   
   return (
-    <Suspense fallback={handleLazyFallback()}>
+    <Suspense fallback={LazyFallback}>
       {route}
     </Suspense>
   )
