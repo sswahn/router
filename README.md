@@ -48,7 +48,6 @@ To lazy load a component provide a `lazyFallback` component.
 </Router>
 ```
 
-### Dynamic Parameters
 The `Route` component supports dynamic parameters in route paths.
 ```jsx
 <Route path="/profile/{username}" component={UserProfile} />
