@@ -66,7 +66,7 @@ const handleOnClick = event => {
 }
 ```
 
-### Dynamic Rendering
+### Dynamic Component Resolution
 Use a function to return a component.  
 ```javascript
 <Route path="/dashboard" component={() => {
