@@ -3,14 +3,14 @@ import { useState, useEffect, Children, Suspense } from 'react'
 const Router = ({ lazyFallback: LazyFallback, children }) => {
   const [path, setPath] = useState(window.location.pathname)
 
-  const route = Children.toArray(children).find((child) => {
-    return !child.props.path || path === child.props.path || matchPath(child.props.path)
-  })
-
   const matchPath = route => {
     const regex = new RegExp(`^${route.replace(/{[\w-]+}/g, '([^/]+)')}$`)
     return regex.test(window.location.pathname)
   }
+
+  const route = Children.toArray(children).find((child) => {
+    return !child.props.path || path === child.props.path || matchPath(child.props.path)
+  })
 
   const handleLazyFallback = () => {
     if (LazyFallback) {
