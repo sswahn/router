@@ -25,6 +25,7 @@ Import the router component.
 import { Router, Route } from '@sswahn/router'
 ```  
 
+### Routing
 Define your routes' paths and their associated components.  
 ```javascript
 import Home from './components/Home'
@@ -38,8 +39,9 @@ import NotFound from './components/NotFound'
   <Route path="/contact" component={Contact} />
   <Route component={NotFound}
 </Router>
-```  
+```
 
+### Lazy Loading
 To lazy load a component provide a `lazyFallback` component.  
 ```javascript
 <Router lazyFallback={CustomLoadingSpinner}>
@@ -48,11 +50,13 @@ To lazy load a component provide a `lazyFallback` component.
 </Router>
 ```
 
+### Dynamic Parameters
 The `Route` component supports dynamic parameters in route paths.
 ```jsx
 <Route path="/profile/{username}" component={UserProfile} />
 ```
 
+### Programmatic Navigation
 Navigate to a route's path with `navigateTo`.  
 ```javascript
 import { navigateTo } from '@sswahn/router'
@@ -62,6 +66,7 @@ const handleOnClick = event => {
 }
 ```
 
+### Dynamic Rendering
 Use a function to return a component.  
 ```javascript
 <Route path="/dashboard" component={() => {
@@ -74,10 +79,8 @@ Use a function to return a component.
 ```  
 
 ## Peer Dependencies
-
 Router requires React as a peer dependency. You should have React installed in your project with a version compatible with this library.
-
-[React](https://reactjs.org/): ^18.2.0
+- [React](https://reactjs.org/): ^18.2.0
 
 
 ## License
