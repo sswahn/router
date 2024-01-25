@@ -8,7 +8,7 @@ const Router = ({ lazyFallback: LazyFallback, children }) => {
     return regex.test(window.location.pathname)
   }
 
-  const route = Children.toArray(children).find((child) => {
+  const route = Children.toArray(children).find(child => {
     return !child.props.path || path === child.props.path || matchPath(child.props.path)
   })
   
