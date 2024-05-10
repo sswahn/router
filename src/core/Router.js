@@ -1,6 +1,6 @@
-import { useState, useEffect, Children, Suspense } from 'react'
+import { useState, useEffect, Children } from 'react'
 
-const Router = ({ lazyFallback: LazyFallback, children }) => {
+const Router = ({ children }) => {
   const [path, setPath] = useState(window.location.pathname)
 
   const matchPath = route => {
@@ -41,9 +41,9 @@ const Router = ({ lazyFallback: LazyFallback, children }) => {
   }, [])
   
   return (
-    <Suspense fallback={LazyFallback}>
+    <>
       {route}
-    </Suspense>
+    </>
   )
 }
 
