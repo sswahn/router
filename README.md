@@ -5,10 +5,10 @@ A lightweight and flexible routing solution. Router simplifies the process of im
 ## Features
 
 - **Component-Based Routing**: The library is designed to work with React's component-based architecture, allowing you to define routes using individual components.
-- **"Not Found" Handling**: The library provides a built-in mechanism to handle "Not Found" scenarios when no matching route is found. This is achieved by using a component without a path prop.
 - **Programmatic Navigation**: It supports programmatic navigation through a `navigateTo` function, enabling you to navigate to specific routes in your application.
 - **Dynamic Component Resolution**: Use function-based components to dynamically resolve which component to render based on conditions specific to each route.
 - **Dynamic Parameters**: Define dynamic parameters in your route paths to intelligently match and capture values for these parameters.
+- **"Not Found" Handling**: The library provides a built-in mechanism to handle "Not Found" scenarios when no matching route is found. This is achieved by using a component without a path prop.
 - **Simple and Efficient**: The routing logic is implemented with simplicity and efficiency in mind, allowing for a clean and straightforward routing solution.
 - **Customization**: The library is flexible and can be customized to fit the specific needs of your application.  
 
