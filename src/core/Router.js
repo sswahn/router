@@ -12,7 +12,7 @@ const Router = ({ basePath = '', children }) => {
   
   const matchPath = route => {
     const regex = new RegExp(`^${route.replace(/{[\w-]+}/g, '([^/]+)')}$`)
-    return regex.test(window.location.pathname)
+    return regex.test(path)
   }
 
   const route = Children.toArray(children).find(child => {
