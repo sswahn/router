@@ -24,7 +24,10 @@ const Router = ({ basePath = '', children }) => {
   }
 
   const handleRouteChange = event => {
-    setPath(event.detail.path)
+    const newPath = event.detail.path.startsWith(basePath)
+      ? event.detail.path.replace(basePath, '') || '/'
+      : event.detail.path
+    setPath(newPath)
   }
 
   useEffect(() => { // handles browser navigation: back/forward
