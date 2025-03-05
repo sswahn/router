@@ -1,13 +1,14 @@
 import { useState, useEffect, Children } from 'react'
 
 const Router = ({ basePath = '', children }) => {
-  const [path, setPath] = useState(window.location.pathname)
-
+  
   const getRelativePath = () => {
     return window.location.pathname.startsWith(basePath)
       ? window.location.pathname.replace(basePath, '') || '/'
       : window.location.pathname;
   }
+
+  const [path, setPath] = useState(getRelativePath())
   
   const matchPath = route => {
     const regex = new RegExp(`^${route.replace(/{[\w-]+}/g, '([^/]+)')}$`)
