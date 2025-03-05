@@ -8,6 +8,7 @@ A lightweight and flexible routing solution. Router simplifies the process of im
 - **Programmatic Navigation**: It supports programmatic navigation through a `navigateTo` function, enabling you to navigate to specific routes in your application.
 - **Dynamic Component Resolution**: Use function-based components to dynamically resolve which component to render based on conditions specific to each route.
 - **Dynamic Parameters**: Define dynamic parameters in your route paths to intelligently match and capture values for these parameters.
+- **Base Path Handling**: Supports applications deployed under a subpath using the `basePath` prop in the Router component to ensure correct routing.
 - **"Not Found" Handling**: The library provides a built-in mechanism to handle "Not Found" scenarios when no matching route is found. This is achieved by using a component without a path prop.
 - **Simple and Efficient**: The routing logic is implemented with simplicity and efficiency in mind, allowing for a clean and straightforward routing solution.
 - **Customization**: The library is flexible and can be customized to fit the specific needs of your application.  
@@ -66,7 +67,19 @@ Use a function to return a component.
     return <PublicDashboard />
   }
 }} />
+```
+
+### Base Path Handling
+If your application is hosted under a subdirectory use the `basePath` prop
+```javascript
+<Router basePath="/app">
+  <Route path="/" component={Home} />
+  <Route path="/about" component={About} />
+  <Route path="/contact" component={Contact} />
+  <Route component={NotFound} />
+</Router>
 ```  
+
 
 ## Peer Dependencies
 Router requires React as a peer dependency. You should have React installed in your project with a version compatible with this library.
