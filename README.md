@@ -70,7 +70,7 @@ Use a function to return a component.
 ```
 
 ### Base Path Handling
-If your application is hosted under a subdirectory use the `basePath` prop
+If your application uses a subdirectory like `domain.com/app/` use the `basePath` prop
 ```javascript
 <Router basePath="/app">
   <Route path="/" component={Home} />
