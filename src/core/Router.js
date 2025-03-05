@@ -1,8 +1,14 @@
 import { useState, useEffect, Children } from 'react'
 
-const Router = ({ children }) => {
+const Router = ({ basePath = '', children }) => {
   const [path, setPath] = useState(window.location.pathname)
 
+  const getRelativePath = () => {
+    return window.location.pathname.startsWith(basePath)
+      ? window.location.pathname.replace(basePath, '') || '/'
+      : window.location.pathname;
+  }
+  
   const matchPath = route => {
     const regex = new RegExp(`^${route.replace(/{[\w-]+}/g, '([^/]+)')}$`)
     return regex.test(window.location.pathname)
@@ -13,7 +19,7 @@ const Router = ({ children }) => {
   })
   
   const handlePopState = event => {
-    setPath(window.location.pathname)
+    setPath(getRelativePath())
   }
 
   const handleRouteChange = event => {
